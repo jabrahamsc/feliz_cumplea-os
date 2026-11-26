@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#E4457F">
+<title>Feliz cumpleaños</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grafito:#35343A; --gris:#6F6D75; --niebla:#DAD7DB; --perla:#ECEAEC;
+  --rosa:#E4457F; --rosa-medio:#F08DB1; --rosa-claro:#F6CFDD; --rosa-palido:#FBEAF1;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--grafito);background:var(--perla);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);line-height:1.05;margin:0;font-weight:700}
+p{margin:0}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,10vw,7.5rem) 0}
+.sec-titulo{font-size:clamp(2rem,5vw,3.25rem);margin-bottom:2.5rem;max-width:14ch}
+
+/* Confeti */
+#confeti{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:50}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:3rem 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.para{font-size:1.15rem;color:var(--gris);margin-bottom:1rem}
+.para b{color:var(--rosa);font-weight:600}
+.hero h1{font-size:clamp(3.4rem,10.5vw,8rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--rosa)}
+.frase{margin-top:1.75rem;max-width:34ch;font-size:1.2rem;color:var(--gris)}
+.btn{display:inline-block;margin-top:2.25rem;padding:.95rem 1.8rem;border:0;border-radius:999px;background:var(--rosa);color:#fff;font:600 1rem var(--sans);cursor:pointer;text-decoration:none;transition:background .2s,transform .2s}
+.btn:hover{background:var(--grafito);transform:translateY(-2px)}
+.btn.sec{background:transparent;color:var(--grafito);box-shadow:inset 0 0 0 2px var(--grafito)}
+.btn.sec:hover{background:var(--grafito);color:#fff}
+
+.edad{position:relative;aspect-ratio:1;width:min(100%,380px);margin-inline:auto}
+.edad .c1{position:absolute;inset:0;border-radius:50%;background:var(--rosa);display:grid;place-content:center;text-align:center;animation:flota 7s ease-in-out infinite}
+.edad .num{font-family:var(--serif);font-weight:700;font-size:clamp(6rem,19vw,10.5rem);line-height:.9;color:var(--perla)}
+.edad .anios{font-size:1.2rem;font-weight:600;color:var(--grafito);margin-top:.25rem}
+.edad .c2{position:absolute;width:38%;aspect-ratio:1;border-radius:50%;background:var(--gris);left:-8%;bottom:-6%}
+.edad .c3{position:absolute;width:16%;aspect-ratio:1;border-radius:50%;background:var(--rosa-claro);right:2%;top:-4%}
+@keyframes flota{50%{transform:translateY(-12px)}}
+
+/* Mensaje */
+.mensaje{background:var(--niebla)}
+.carta{background:#fff;border-left:10px solid var(--rosa);border-radius:6px 22px 22px 6px;padding:clamp(1.75rem,5vw,3.5rem);max-width:760px;box-shadow:0 18px 40px -22px rgba(53,52,58,.45)}
+.carta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1.5rem}
+.carta p{font-family:var(--serif);font-weight:500;font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.75;max-width:60ch}
+.carta p+p{margin-top:1.1rem}
+.firma{margin-top:2rem;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--rosa)}
+
+/* Galería */
+.galeria .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.foto{margin:0;border-radius:18px;overflow:hidden;background:var(--niebla);position:relative;aspect-ratio:4/5}
+.foto:nth-child(2),.foto:nth-child(5){aspect-ratio:1}
+.foto:nth-child(3){grid-row:span 1}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.foto:hover img{transform:scale(1.04)}
+.ph{width:100%;height:100%;display:grid;place-content:center;gap:.4rem;text-align:center;color:var(--gris);font-weight:500;background:repeating-linear-gradient(135deg,var(--niebla) 0 14px,#E3E0E4 14px 28px)}
+.ph::before{content:"♥";font-size:2rem;color:var(--rosa-medio)}
+.foto:nth-child(even) .ph::before{color:var(--gris)}
+.foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:.8rem 1rem;font-size:.95rem;color:#fff;background:linear-gradient(transparent,rgba(53,52,58,.75))}
+
+/* Pastel */
+.pastel{background:var(--rosa-palido);text-align:center}
+.pastel svg{display:block;width:min(560px,100%);height:auto;margin:0 auto;overflow:visible}
+.pastel h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:500;font-style:italic;max-width:20ch;margin:2.25rem auto 0}
+.llama{transform-box:fill-box;transform-origin:50% 100%;animation:parpadeo 1.6s ease-in-out infinite;transition:opacity .4s}
+.apagadas .llama{opacity:0}
+@keyframes parpadeo{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.94) rotate(2deg)}}
+
+/* Cierre */
+.cierre{background:var(--grafito);color:var(--perla);text-align:center;position:relative;overflow:hidden}
+.cierre h2{font-size:clamp(2.4rem,7vw,5rem);max-width:16ch;margin:0 auto}
+.cierre h2 em{font-style:italic;font-weight:500;color:var(--rosa-medio)}
+.cierre p{margin:1.5rem auto 0;max-width:40ch;color:var(--niebla);font-size:1.15rem}
+.cierre .btn{background:var(--rosa);color:#fff}
+.cierre .btn:hover{background:var(--perla);color:var(--grafito)}
+.cierre::before,.cierre::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.cierre::before{width:340px;height:340px;background:var(--rosa);opacity:.14;left:-120px;top:-120px}
+.cierre::after{width:260px;height:260px;background:var(--gris);opacity:.3;right:-90px;bottom:-90px}
+.cierre .wrap{position:relative;z-index:1}
+
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .edad{width:min(78%,300px);margin-top:1rem}
+  .galeria .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .galeria .grid{gap:.7rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .edad .c1{animation:none}
+  .btn,.foto img{transition:none}
+  .llama{animation:none}
+}
+</style>
+</head>
+<body>
+<canvas id="confeti" aria-hidden="true"></canvas>
+
+<main>
+  <!-- ===== PORTADA ===== -->
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <p class="para">Para <b>Jossellin Canizalez</b></p>
+        <h1>Feliz <em>cumpleaños</em></h1>
+        <p class="frase">La pumpeañera mas preciosa</p>
+        <a class="btn" href="#mensaje">Abrir mi mensaje</a>
+      </div>
+      <div class="edad" aria-label="Edad que cumple">
+        <div class="c1"><span class="num">27</span><span class="anios">años</span></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MENSAJE ===== -->
+  <section class="mensaje" id="mensaje">
+    <div class="wrap">
+      <article class="carta">
+        <h2>Mi niña para siempre</h2>
+        <p>Sin importar cuanto tiempo pase tu siempre seras mi niña chiquita.</p>
+        <p>Quiero hacer de tus cumpleaños siempre un dia especial.</p>
+        <p>Bebe consentida.</p>
+        <div class="firma">Tu novio que te ama muchoooooooooooooooooo.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="galeria">
+    <div class="wrap">
+      <h2 class="sec-titulo">Un pedacito de vida juntos</h2>
+      <div class="grid">
+        <figure class="foto"><img src="1.jpg" alt="Nosotros con las luces de la ciudad de noche" style="object-position:50% 45%" loading="lazy"><figcaption>Cada paisaje que se ve mejor contigo</figcaption></figure>
+        <figure class="foto"><img src="2.jpg" alt="Abrazados frente al lago" style="object-position:50% 28%" loading="lazy"><figcaption>Cada segundo agarrando tu manito</figcaption></figure>
+        <figure class="foto"><img src="3.jpg" alt="Los dos juntos en el carro" style="object-position:50% 35%" loading="lazy"><figcaption>Cada abrazo y cada viaje</figcaption></figure>
+        <figure class="foto"><img src="4.jpg" alt="De la mano en el balcón, con la ciudad de fondo" style="object-position:50% 35%" loading="lazy"><figcaption>Cada momento importante juntos</figcaption></figure>
+        <figure class="foto"><img src="5.jpg" alt="Nuestras pulseras a juego" style="object-position:50% 55%" loading="lazy"><figcaption>Y cada fotito abrazados</figcaption></figure>
+        <figure class="foto"><img src="6.jpg" alt="Una noche juntos en la terraza" style="object-position:50% 40%" loading="lazy"><figcaption>Te amo en cada segundo</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PASTEL ===== -->
+  <section class="pastel">
+    <div class="wrap">
+      <svg id="pastel" viewBox="0 0 400 340" role="img" aria-label="Pastel de cumpleaños con tres velas">
+        <circle cx="42" cy="130" r="26" fill="var(--niebla)"/>
+        <circle cx="362" cy="92" r="16" fill="var(--rosa-claro)"/>
+        <circle cx="352" cy="252" r="34" fill="var(--niebla)"/>
+        <ellipse cx="200" cy="318" rx="178" ry="18" fill="var(--gris)"/>
+        <ellipse cx="200" cy="313" rx="178" ry="16" fill="var(--niebla)"/>
+        <rect x="50" y="220" width="300" height="90" rx="16" fill="var(--rosa)"/>
+        <rect x="50" y="220" width="300" height="12" rx="5" fill="#fff"/><rect x="65" y="220" width="14" height="26" rx="7" fill="#fff"/><rect x="101" y="220" width="14" height="38" rx="7" fill="#fff"/><rect x="143" y="220" width="14" height="22" rx="7" fill="#fff"/><rect x="189" y="220" width="14" height="34" rx="7" fill="#fff"/><rect x="231" y="220" width="14" height="28" rx="7" fill="#fff"/><rect x="275" y="220" width="14" height="40" rx="7" fill="#fff"/><rect x="315" y="220" width="14" height="24" rx="7" fill="#fff"/><circle cx="74" cy="297" r="5" fill="var(--perla)"/><circle cx="102" cy="297" r="5" fill="var(--perla)"/><circle cx="130" cy="297" r="5" fill="var(--perla)"/><circle cx="158" cy="297" r="5" fill="var(--perla)"/><circle cx="186" cy="297" r="5" fill="var(--perla)"/><circle cx="214" cy="297" r="5" fill="var(--perla)"/><circle cx="242" cy="297" r="5" fill="var(--perla)"/><circle cx="270" cy="297" r="5" fill="var(--perla)"/><circle cx="298" cy="297" r="5" fill="var(--perla)"/><circle cx="326" cy="297" r="5" fill="var(--perla)"/>
+        <rect x="95" y="150" width="210" height="75" rx="14" fill="var(--rosa-claro)"/>
+        <rect x="95" y="150" width="210" height="10" rx="5" fill="#fff"/><rect x="110" y="150" width="14" height="22" rx="7" fill="#fff"/><rect x="143" y="150" width="14" height="32" rx="7" fill="#fff"/><rect x="183" y="150" width="14" height="20" rx="7" fill="#fff"/><rect x="221" y="150" width="14" height="34" rx="7" fill="#fff"/><rect x="255" y="150" width="14" height="24" rx="7" fill="#fff"/><rect x="281" y="150" width="14" height="28" rx="7" fill="#fff"/><text x="125" y="212" font-size="20" text-anchor="middle" fill="var(--rosa)">♥</text><text x="165" y="212" font-size="20" text-anchor="middle" fill="var(--rosa)">♥</text><text x="205" y="212" font-size="20" text-anchor="middle" fill="var(--rosa)">♥</text><text x="245" y="212" font-size="20" text-anchor="middle" fill="var(--rosa)">♥</text><text x="285" y="212" font-size="20" text-anchor="middle" fill="var(--rosa)">♥</text>
+        <rect x="135" y="95" width="130" height="60" rx="12" fill="var(--gris)"/>
+        <rect x="135" y="95" width="130" height="10" rx="5" fill="#fff"/><rect x="146" y="95" width="14" height="18" rx="7" fill="#fff"/><rect x="175" y="95" width="14" height="28" rx="7" fill="#fff"/><rect x="207" y="95" width="14" height="20" rx="7" fill="#fff"/><rect x="239" y="95" width="14" height="24" rx="7" fill="#fff"/><circle cx="155" cy="141" r="3.5" fill="var(--rosa-claro)"/><circle cx="182" cy="141" r="3.5" fill="var(--rosa-claro)"/><circle cx="210" cy="141" r="3.5" fill="var(--rosa-claro)"/><circle cx="238" cy="141" r="3.5" fill="var(--rosa-claro)"/>
+        <line x1="168" y1="58" x2="168" y2="51" stroke="var(--grafito)" stroke-width="2" stroke-linecap="round"/><rect x="163" y="58" width="10" height="38" rx="3" fill="var(--rosa-medio)"/><g transform="translate(168 51)"><g class="llama" style="animation-delay:0.0s"><circle r="15" cy="-10" fill="#FFC857" opacity=".22"/><path d="M0 -22 C7 -12 8 -4 0 2 C-8 -4 -7 -12 0 -22Z" fill="#FFC857"/><path d="M0 -12 C3 -7 4 -4 0 -1 C-4 -4 -3 -7 0 -12Z" fill="#FFE9A8"/></g></g><line x1="200" y1="58" x2="200" y2="51" stroke="var(--grafito)" stroke-width="2" stroke-linecap="round"/><rect x="195" y="58" width="10" height="38" rx="3" fill="#fff"/><g transform="translate(200 51)"><g class="llama" style="animation-delay:0.4s"><circle r="15" cy="-10" fill="#FFC857" opacity=".22"/><path d="M0 -22 C7 -12 8 -4 0 2 C-8 -4 -7 -12 0 -22Z" fill="#FFC857"/><path d="M0 -12 C3 -7 4 -4 0 -1 C-4 -4 -3 -7 0 -12Z" fill="#FFE9A8"/></g></g><line x1="232" y1="58" x2="232" y2="51" stroke="var(--grafito)" stroke-width="2" stroke-linecap="round"/><rect x="227" y="58" width="10" height="38" rx="3" fill="var(--rosa-medio)"/><g transform="translate(232 51)"><g class="llama" style="animation-delay:0.8s"><circle r="15" cy="-10" fill="#FFC857" opacity=".22"/><path d="M0 -22 C7 -12 8 -4 0 2 C-8 -4 -7 -12 0 -22Z" fill="#FFC857"/><path d="M0 -12 C3 -7 4 -4 0 -1 C-4 -4 -3 -7 0 -12Z" fill="#FFE9A8"/></g></g>
+      </svg>
+      <h2>Pide un deseo preciosa, siempre que yo pueda buscare cumplir todos los que tengas.</h2>
+      <button class="btn" id="soplar" type="button">Soplar las velas</button>
+    </div>
+  </section>
+
+  <!-- ===== CIERRE ===== -->
+  <section class="cierre">
+    <div class="wrap">
+      <h2>Te amo bebe  <em>pumpeañera</em></h2>
+      <p>Esto es solo un pedacito de la felicidad que hemos vivido y nos queda por vivir.</p>
+      <button class="btn" id="otra" type="button">Lanzar confeti otra vez</button>
+    </div>
+  </section>
+</main>
+
+<script>
+const cv=document.getElementById('confeti'),cx=cv.getContext('2d');
+let P=[],raf=0;
+const COLORES=['#E4457F','#F6CFDD','#B8B5BC','#6F6D75','#F08DB1'];
+function medir(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio}
+addEventListener('resize',medir);medir();
+
+function lanzar(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const d=devicePixelRatio;
+  for(let i=0;i<130;i++){
+    P.push({x:Math.random()*cv.width,y:-(20+Math.random()*cv.height*.4)*d,
+      w:(6+Math.random()*6)*d,h:(10+Math.random()*8)*d,
+      vy:(2+Math.random()*3)*d,vx:(Math.random()-.5)*2*d,
+      r:Math.random()*6,vr:(Math.random()-.5)*.2,c:COLORES[i%COLORES.length]});
+  }
+  if(!raf)raf=requestAnimationFrame(paso);
+}
+function paso(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  for(const p of P){
+    p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);
+    cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();
+  }
+  P=P.filter(p=>p.y<cv.height+40);
+  if(P.length){raf=requestAnimationFrame(paso)}else{raf=0;cx.clearRect(0,0,cv.width,cv.height)}
+}
+addEventListener('load',()=>setTimeout(lanzar,400));
+document.getElementById('otra').addEventListener('click',lanzar);
+const btnS=document.getElementById('soplar'),torta=document.getElementById('pastel');
+btnS.addEventListener('click',()=>{
+  const off=torta.classList.toggle('apagadas');
+  btnS.textContent=off?'Encender las velas':'Soplar las velas';
+  if(off)lanzar();
+});
+</script>
+</body>
+</html>
